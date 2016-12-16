@@ -3,13 +3,78 @@
 	padding: 0;
 }
 
+body {
+	background: inherit;
+	transition: all .65s ease-in-out;
+}
+
+body.appear {
+	background: rgba(84,84,84,.5);
+}
+ 
+form {
+	font-size: 28px;
+	color: #FFF;
+}
 
 form > input {
 	display: block;
-	margin-top: 30px;
+	margin: auto;
+	height: 30px;
+	width: 300px;
+	font-size: 22px;
+	color: #C35411;
 }
 
 input[type=radio] {
-	margin-top: 0;
+	margin: 0;
+	display: inline-block;
+	padding: 0;
+	height: 15px;
+	width: 15px;
 }
 
+form > input[type=submit] {
+	position: absolute;
+	text-align: center;
+	bottom: 30px;
+	width: 200px;
+	border-radius: 30px;
+	color: #FFF;
+	background: #C35411;
+	left: 0;
+	right: 0;
+	outline: none;
+}
+
+#misterform {
+	height: 400px;
+	width: 400px;
+	margin: auto;
+	background: #3A3AC1;
+	text-align: center;
+	position: relative;
+	visibility: hidden;
+}
+
+#misterform.appear {
+	animation: slidein .75s cubic-bezier(1, 0.58, 0.35, 1.43) forwards;
+}
+
+
+
+
+@keyframes slidein {
+	from {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(550px);
+	}
+
+	to {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+}
